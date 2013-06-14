@@ -4,10 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+    
      
             <TextView
 		    android:id="@+id/shekhar"
@@ -22,6 +19,6 @@
             android:text="@string/menu"
             android:id="@+id/button"
             android:layout_marginTop="21dp"/>
-    </ScrollView>
+    
     
     </RelativeLayout>
