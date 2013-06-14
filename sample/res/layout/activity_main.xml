@@ -4,33 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-
-   
 	<LinearLayout
-        android:id="@+id/picNname"
-        android:layout_width="match_parent"
-        android:layout_height="100dip"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dip"
-        android:layout_marginLeft="4dip"
-        android:layout_marginRight="4dip"
-        android:orientation="horizontal" >
+	    android:id="@+id/picNname"
+	    android:layout_width="match_parent"
+	    android:layout_height="100dip"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginLeft="4dip"
+	    android:layout_marginRight="4dip"
+	    android:layout_marginTop="8dip"
+	    android:orientation="horizontal"
+	    android:textAlignment="center" >
 
 		<ImageView
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_margin="4dip"
             android:layout_weight="1"
-            android:background="@drawable/shekhar"/>
+            android:background="@drawable/aloo"/>
 		<TextView
 		    android:id="@+id/dishName"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="@string/n2"
-            android:layout_margin="4dip"
-            android:layout_weight="1" />
-		
-        
+            android:layout_marginTop="45dip"
+            android:layout_marginLeft="18dip"
+            android:layout_weight="1"
+            android:textStyle="bold"/>
+
         </LinearLayout>
          <com.astuetz.viewpager.extensions.PagerSlidingTabStrip
         android:id="@+id/tabs"

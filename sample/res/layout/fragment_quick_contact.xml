@@ -6,17 +6,7 @@
     android:layout_height="wrap_content" >
 
    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/image"
-        android:background="#77000000"
-        android:paddingBottom="14dip"
-        android:paddingLeft="8dip"
-        android:paddingTop="14dip"
-        android:text="Quick Contact"
-        android:textColor="#FFFFFFFF"
-        android:textSize="18sp" />
+  
 
     <com.astuetz.viewpager.extensions.PagerSlidingTabStrip
         android:id="@+id/tabs"

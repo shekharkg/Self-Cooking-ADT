@@ -25,7 +25,7 @@ public final class R {
 		public static final int PagerSlidingTabStrip_shouldExpand = 9;
 	}
 	public static final class drawable {
-		public static final int background_tab = 0x7f020002;
+		public static final int background_tab = 0x7f020003;
 	}
 	public static final class attr {
 		public static final int indicatorColor = 0x7f010000;
