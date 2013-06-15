@@ -1,8 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center" >
 
     
      
@@ -17,8 +19,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/menu"
-            android:id="@+id/button"
-            android:layout_marginTop="21dp"/>
+            android:id="@+id/button"/>
+            <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu2"
+            android:id="@+id/button2"/>
+            <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu3"
+            android:id="@+id/button3"/>
+            <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu4"
+            android:id="@+id/button4"/>
+            
     
     
-    </RelativeLayout>
+  </LinearLayout>

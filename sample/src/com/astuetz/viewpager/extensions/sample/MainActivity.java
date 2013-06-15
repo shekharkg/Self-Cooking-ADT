@@ -1,5 +1,6 @@
 package com.astuetz.viewpager.extensions.sample;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -17,6 +18,7 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
@@ -31,13 +33,34 @@ public class MainActivity extends FragmentActivity {
 
 	private Drawable oldBackground = null;
 	private int currentColor = 0xFF666666;
-
+	
+	//request code
+	protected static final int COLOR_CHANGE_MENU = 001;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-
+		Bundle extras = getIntent().getExtras();
+		int c = extras.getInt("b");
+		ImageView imgView = (ImageView) findViewById(R.id.img);
+		TextView textView = (TextView) findViewById(R.id.dishName);
+        
+        if (c == 1) {
+        	imgView.setImageResource(R.drawable.chips);           	
+            textView.setText("Dish One Chips");
+        } else if(c == 2){
+        	imgView.setImageResource(R.drawable.aloo);
+            textView.setText("Dish Two Aloo");
+        } else if(c == 3){
+        	imgView.setImageResource(R.drawable.bhel);
+            textView.setText("Dish Three Bhel");
+        } else if(c == 4){
+        	imgView.setImageResource(R.drawable.egg);
+            textView.setText("Dish Four Egg");
+        }
+               
 		tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
 		pager = (ViewPager) findViewById(R.id.pager);
 		adapter = new MyPagerAdapter(getSupportFragmentManager());
@@ -63,19 +86,28 @@ public class MainActivity extends FragmentActivity {
 
 		switch (item.getItemId()) {
 
-		case R.id.action_contact:
+		case R.id.action_about:
 			QuickContactFragment dialog = new QuickContactFragment();
 			dialog.show(getSupportFragmentManager(), "QuickContactFragment");
 			return true;
-
+			
+		case R.id.action_color:
+			
+			Intent i = new Intent(this, ColorChange.class);
+	        startActivityForResult(i, COLOR_CHANGE_MENU);
 		}
 
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void changeColor(int newColor) {
-
-		tabs.setIndicatorColor(newColor);
+	/**
+	 * This method changes color of tabs etc.
+	 * @param newColor input color in int format
+	 */
+	public void changeColor(int newColor) {
+		
+			tabs.setIndicatorColor(newColor);
+		
 
 		// change ActionBar color just if an ActionBar is available
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -122,12 +154,10 @@ public class MainActivity extends FragmentActivity {
         textView.setTextColor(newColor);
 
 	}
-
+	
 	public void onColorClicked(View v) {
-
 		int color = Color.parseColor(v.getTag().toString());
 		changeColor(color);
-
 	}
 
 	@Override
@@ -184,7 +214,17 @@ public class MainActivity extends FragmentActivity {
 		public Fragment getItem(int position) {
 			return SuperAwesomeCardFragment.newInstance(position);
 		}
-
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode == COLOR_CHANGE_MENU) {
+			if(resultCode == RESULT_OK) {
+				int color = data.getIntExtra("color", 0);
+				changeColor(color);
+			}
+		}
 	}
 
 }

@@ -3,8 +3,12 @@
 
     <string name="app_name">Self Cooking</string>
     <string name="action_contact">Menu</string>
+    <string name="action_color">Menu</string>
     <string name="n1">Vishalika Choraria</string>
     <string name="n2">Shekhar Kumar Gupta</string>
-    <string name="menu">MAIN MENU</string>
+    <string name="menu">Dish One</string>
+    <string name="menu2">Dish Two</string>
+    <string name="menu3">Dish Three</string>
+    <string name="menu4">Dish Four</string>
 
 </resources>

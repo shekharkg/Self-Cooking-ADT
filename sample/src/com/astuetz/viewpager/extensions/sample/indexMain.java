@@ -15,11 +15,32 @@ public class IndexMain extends Activity  implements OnClickListener{
         setContentView(R.layout.index);
         Button nextButton = (Button) findViewById(R.id.button);
         nextButton.setOnClickListener(this);
+        Button nextButton2 = (Button) findViewById(R.id.button2);
+        nextButton2.setOnClickListener(this);
+        Button nextButton3 = (Button) findViewById(R.id.button3);
+        nextButton3.setOnClickListener(this);
+        Button nextButton4 = (Button) findViewById(R.id.button4);
+        nextButton4.setOnClickListener(this);
     }
     
     @Override
     public void onClick(View view) {
-        Intent intent=new Intent(IndexMain.this,MainActivity.class);
+    	int id = view.getId();
+    	Intent intent = new Intent(IndexMain.this,MainActivity.class);;
+        switch(id) {
+            case R.id.button:
+		        intent.putExtra("b", 1);
+		        break;
+            case R.id.button2:
+		        intent.putExtra("b",2);
+            	break;
+            case R.id.button3:
+		        intent.putExtra("b",3);
+            	break;
+            case R.id.button4:
+		        intent.putExtra("b",4);
+            	break;
+        }
         startActivity(intent);
     }
 }
