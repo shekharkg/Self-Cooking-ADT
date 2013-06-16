@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RecipeList {
+	
+	private static int color = 0xFF666666;
+	
 	private static String[] recipeName = {
 			"Aloo Mash",
 			"Bhelmoori",
@@ -45,6 +48,14 @@ public class RecipeList {
 				R.drawable.tea
 				};
 	
+	public static int getColor() {
+		return color;
+	}
+
+	public static void setColor(int color) {
+		RecipeList.color = color;
+	}
+
 	public static Map<String, Integer> getRecipeDetails(int index) {
 		Map<String, Integer> recipe = new HashMap<String, Integer>();
 		recipe.put(recipeName[index], recipeImage[index]);

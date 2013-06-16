@@ -8,16 +8,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 public class CustomArrayAdapter extends ArrayAdapter<String>{
 	private final Activity context;
 	private final String[] receipe;
 	private final Integer[] images;
+	
 	public CustomArrayAdapter(Activity context,String[] receipe, Integer[] images) {
 		super(context, R.layout.lv_row, receipe);
 		this.context = context;
 		this.receipe = receipe;
 		this.images = images;
 	}
+	
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
 		
@@ -29,7 +32,7 @@ public class CustomArrayAdapter extends ArrayAdapter<String>{
 		//---get a reference to all the views on the xml layout---
 		TextView txtTitle = (TextView) rowView.findViewById(R.id.txtReceipeName);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-		
+		txtTitle.setTextColor(RecipeList.getColor());
 		//---customize the content of each row based on position---
 		txtTitle.setText(receipe[position]);
 		imageView.setImageResource(images[position]);

@@ -60,33 +60,12 @@ public class MainActivity extends FragmentActivity {
 
 		tabs.setViewPager(pager);
 
-		changeColor(currentColor);
+		changeColor(RecipeList.getColor());
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+	
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-
-		switch (item.getItemId()) {
-
-		case R.id.action_menu:
-			QuickContactFragment dialog = new QuickContactFragment();
-			dialog.show(getSupportFragmentManager(), "QuickContactFragment");
-			return true;
-			
-		case R.id.action_color:
-			
-			Intent i = new Intent(this, ColorChange.class);
-	        startActivityForResult(i, COLOR_CHANGE_MENU);
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
+	
 
 	/**
 	 * This method changes color of tabs etc.
