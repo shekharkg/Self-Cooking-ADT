@@ -2,8 +2,8 @@
 <resources>
 
     <string name="app_name">Self Cooking</string>
-    <string name="action_contact">Menu</string>
-    <string name="action_color">Menu</string>
+    <string name="action_menu">Menu</string>
+    <string name="action_color">Color</string>
     <string name="n1">Vishalika Choraria</string>
     <string name="n2">Shekhar Kumar Gupta</string>
     <string name="menu">Dish One</string>

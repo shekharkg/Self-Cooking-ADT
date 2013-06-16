@@ -1,7 +1,6 @@
 package com.astuetz.viewpager.extensions.sample;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -17,7 +16,6 @@ import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,23 +41,13 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		
 		Bundle extras = getIntent().getExtras();
-		int c = extras.getInt("b");
+		int index = extras.getInt("index");
+		String recipeName = RecipeList.getRecipeNameByIndex(index);
+		Integer recipeImage = RecipeList.getRecipeImageByIndex(index);
 		ImageView imgView = (ImageView) findViewById(R.id.img);
 		TextView textView = (TextView) findViewById(R.id.dishName);
-        
-        if (c == 1) {
-        	imgView.setImageResource(R.drawable.chips);           	
-            textView.setText("Dish One Chips");
-        } else if(c == 2){
-        	imgView.setImageResource(R.drawable.aloo);
-            textView.setText("Dish Two Aloo");
-        } else if(c == 3){
-        	imgView.setImageResource(R.drawable.bhel);
-            textView.setText("Dish Three Bhel");
-        } else if(c == 4){
-        	imgView.setImageResource(R.drawable.egg);
-            textView.setText("Dish Four Egg");
-        }
+		imgView.setImageResource(recipeImage);           	
+        textView.setText(recipeName);
                
 		tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
 		pager = (ViewPager) findViewById(R.id.pager);
@@ -86,7 +74,7 @@ public class MainActivity extends FragmentActivity {
 
 		switch (item.getItemId()) {
 
-		case R.id.action_about:
+		case R.id.action_menu:
 			QuickContactFragment dialog = new QuickContactFragment();
 			dialog.show(getSupportFragmentManager(), "QuickContactFragment");
 			return true;
@@ -155,10 +143,7 @@ public class MainActivity extends FragmentActivity {
 
 	}
 	
-	public void onColorClicked(View v) {
-		int color = Color.parseColor(v.getTag().toString());
-		changeColor(color);
-	}
+	
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {

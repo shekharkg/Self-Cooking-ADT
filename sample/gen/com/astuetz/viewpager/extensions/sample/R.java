@@ -163,34 +163,31 @@ containing a value of this type.
         public static final int vishalika=0x7f020026;
     }
     public static final class id {
-        public static final int action_about=0x7f09000d;
-        public static final int action_color=0x7f09000e;
-        public static final int button=0x7f090009;
-        public static final int button2=0x7f09000a;
-        public static final int button3=0x7f09000b;
-        public static final int button4=0x7f09000c;
-        public static final int center=0x7f090007;
-        public static final int colors=0x7f090005;
+        public static final int action_color=0x7f09000a;
+        public static final int action_menu=0x7f090009;
+        public static final int center=0x7f090006;
         public static final int dishName=0x7f090002;
-        public static final int image=0x7f090006;
+        public static final int icon=0x7f090007;
+        public static final int image=0x7f090005;
         public static final int img=0x7f090001;
         public static final int pager=0x7f090004;
         public static final int picNname=0x7f090000;
-        public static final int shekhar=0x7f090008;
         public static final int tabs=0x7f090003;
+        public static final int txtReceipeName=0x7f090008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int fragment_quick_contact=0x7f030001;
         public static final int index=0x7f030002;
-        public static final int quick_color=0x7f030003;
+        public static final int lv_row=0x7f030003;
+        public static final int quick_color=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
     }
     public static final class string {
         public static final int action_color=0x7f060002;
-        public static final int action_contact=0x7f060001;
+        public static final int action_menu=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int menu=0x7f060005;
         public static final int menu2=0x7f060006;

@@ -1,13 +1,29 @@
 package com.astuetz.viewpager.extensions.sample;
 
-import android.os.Bundle;
-import android.widget.Button;
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.ListView;
 
-public class IndexMain extends Activity  implements OnClickListener{
+public class IndexMain extends ListActivity {
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.index);
+		//---List View---
+		CustomArrayAdapter adapter = new CustomArrayAdapter(this, RecipeList.getRecipeName(), RecipeList.getRecipeImage());
+				setListAdapter(adapter);}
+	@Override
+	public void onListItemClick(ListView parent, View v,int position, long id) {
+		Intent intent = new Intent(IndexMain.this,MainActivity.class);
+		intent.putExtra("index", position);
+	    startActivity(intent);
+	}
+}
+
+/*public class IndexMain extends ListActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +39,7 @@ public class IndexMain extends Activity  implements OnClickListener{
         nextButton4.setOnClickListener(this);
     }
     
-    @Override
+   @Override
     public void onClick(View view) {
     	int id = view.getId();
     	Intent intent = new Intent(IndexMain.this,MainActivity.class);;
@@ -43,4 +59,4 @@ public class IndexMain extends Activity  implements OnClickListener{
         }
         startActivity(intent);
     }
-}
+}*/

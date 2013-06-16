@@ -27,9 +27,8 @@
             android:label="@string/app_name" >
        </activity>
        <activity android:name=".ColorChange"
-       		android:label="Choose Theme's Color"
+       		android:label="Select Color"
         	android:screenOrientation="portrait"
-        	android:icon="@drawable/aloo"
         	android:theme="@android:style/Theme.Dialog">
        </activity>
     </application>
