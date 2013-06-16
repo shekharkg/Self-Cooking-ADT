@@ -74,5 +74,4 @@ public class SuperAwesomeCardFragment extends Fragment {
 		fl.addView(v);
 		return fl;
 	}
-
 }

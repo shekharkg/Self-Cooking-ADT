@@ -2,28 +2,22 @@ package com.astuetz.viewpager.extensions.sample;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.TransitionDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class IndexMain extends ListActivity {
 	
 	//request code
-		protected static final int COLOR_CHANGE_MENU = 002;
+	protected static final int COLOR_CHANGE_MENU = 002;
 	
-		@Override
-		public boolean onCreateOptionsMenu(Menu menu) {
-			getMenuInflater().inflate(R.menu.main, menu);
-			return true;
-		}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
 		
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -44,19 +38,11 @@ public class IndexMain extends ListActivity {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
 		switch (item.getItemId()) {
-
-		case R.id.action_menu:
-			
-			return true;
-			
-		case R.id.action_color:
-			
-			Intent i = new Intent(this, ColorChange.class);
-	        startActivityForResult(i, COLOR_CHANGE_MENU);
+			case R.id.action_color:
+				Intent i = new Intent(this, ColorChange.class);
+				startActivityForResult(i, COLOR_CHANGE_MENU);
 		}
-
 		return super.onOptionsItemSelected(item);
 	}
 	
@@ -72,12 +58,6 @@ public class IndexMain extends ListActivity {
 	}
 	
 	public void changeColor(int newColor) {
-	//ListView listViewText = (ListView) findViewById(android.R.id.list);
 		RecipeList.setColor(newColor);
-	
-
-
+	}
 }
-}
-
-

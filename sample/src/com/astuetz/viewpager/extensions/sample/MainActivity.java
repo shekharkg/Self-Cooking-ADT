@@ -14,8 +14,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -63,36 +61,26 @@ public class MainActivity extends FragmentActivity {
 		changeColor(RecipeList.getColor());
 	}
 
-	
-
-	
-
 	/**
 	 * This method changes color of tabs etc.
 	 * @param newColor input color in int format
 	 */
 	public void changeColor(int newColor) {
-		
-			tabs.setIndicatorColor(newColor);
-		
+		tabs.setIndicatorColor(newColor);
 
 		// change ActionBar color just if an ActionBar is available
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-
 			Drawable colorDrawable = new ColorDrawable(newColor);
 			Drawable bottomDrawable = getResources().getDrawable(R.drawable.actionbar_bottom);
 			LayerDrawable ld = new LayerDrawable(new Drawable[] { colorDrawable, bottomDrawable });
 
 			if (oldBackground == null) {
-
 				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
 					ld.setCallback(drawableCallback);
 				} else {
 					getActionBar().setBackgroundDrawable(ld);
 				}
-
 			} else {
-
 				TransitionDrawable td = new TransitionDrawable(new Drawable[] { oldBackground, ld });
 
 				// workaround for broken ActionBarContainer drawable handling on
@@ -105,7 +93,6 @@ public class MainActivity extends FragmentActivity {
 				}
 
 				td.startTransition(200);
-
 			}
 
 			oldBackground = ld;
@@ -113,17 +100,13 @@ public class MainActivity extends FragmentActivity {
 			// http://stackoverflow.com/questions/11002691/actionbar-setbackgrounddrawable-nulling-background-from-thread-handler
 			getActionBar().setDisplayShowTitleEnabled(false);
 			getActionBar().setDisplayShowTitleEnabled(true);
-
 		}
 
 		currentColor = newColor;
 		TextView textView = (TextView) findViewById(R.id.dishName);
         textView.setTextColor(newColor);
-
 	}
 	
-	
-
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
@@ -155,13 +138,10 @@ public class MainActivity extends FragmentActivity {
 	};
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {
-
 		private final String[] TITLES = { "Ingredients Required", "Steps to be Followed" };
 
 		public MyPagerAdapter(FragmentManager fm) {
 			super(fm);
-			
-
 		}
 
 		@Override
@@ -190,5 +170,4 @@ public class MainActivity extends FragmentActivity {
 			}
 		}
 	}
-
 }

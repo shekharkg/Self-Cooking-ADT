@@ -23,7 +23,6 @@ public class CustomArrayAdapter extends ArrayAdapter<String>{
 	
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
-		
 		//---print the index of the row to examine---
 		Log.d("CustomArrayAdapter",String.valueOf(position));
 		LayoutInflater inflater = context.getLayoutInflater();

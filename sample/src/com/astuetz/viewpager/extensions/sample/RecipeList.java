@@ -85,5 +85,4 @@ public class RecipeList {
 	public static Integer getRecipeImageByIndex(int index) {
 		return recipeImage[index];
 	}
-
 }
