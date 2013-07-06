@@ -23,8 +23,10 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class SuperAwesomeCardFragment extends Fragment {
@@ -59,19 +61,22 @@ public class SuperAwesomeCardFragment extends Fragment {
 		final int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources()
 				.getDisplayMetrics());
 
-		TextView v = new TextView(getActivity());
+		WebView v = new WebView(getActivity());
 		params.setMargins(margin, margin, margin, margin);
 		v.setLayoutParams(params);
 		v.setLayoutParams(params);
-		v.setGravity(Gravity.CENTER);
 		v.setBackgroundResource(R.drawable.background_card);
 		if(position==0){
-			v.setText(R.string.app_name);
+			String ingredients = "<html><body><div><ol><li>2-3 potatoes</li><li>2 onions</li> <li>2 tbsp chilli powder</li><li>1 tbsp salt or as desired</li><li>1-2 tbsp tomato sauce</li></ol></div></body></html>";
+			v.loadData(ingredients, "text/html", null);
 		}
 		else{
-			v.setText(R.string.app_name);
+			String steps = "<html><body><div><ol><li>Add water to the Electric kettle and switch on it to boil.</li><li>After 2 minutes add potatoes and allowed it to boil for approx 5 minutes.</li><li>Check it again and allowed it to boil for 5 more minutes.</li><li>By the time chop the onions.</li><li>Take out the boiled potatoes from the kettle and allowed it to cool.</li><li>Peel the skin of the potatoes and mash it up with your hands.</li><li>Add the left out ingredients and mix it well.</li><li>Your Aloo Mash is ready to eat with boiled rice or as suitable.</li></ol></div></body></html> ";
+			v.loadData(steps, "text/html", null);
 		}
-		fl.addView(v);
+		ScrollView scrollView = new ScrollView(getActivity());
+		scrollView.addView(v);
+		fl.addView(scrollView);
 		return fl;
 	}
 }

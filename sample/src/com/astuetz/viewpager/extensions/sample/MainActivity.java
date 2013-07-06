@@ -16,10 +16,11 @@ import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.view.View;
 
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements View.OnClickListener  {
 
 	private final Handler handler = new Handler();
 
@@ -46,6 +47,8 @@ public class MainActivity extends FragmentActivity {
 		TextView textView = (TextView) findViewById(R.id.dishName);
 		imgView.setImageResource(recipeImage);           	
         textView.setText(recipeName);
+        TextView knowMore = (TextView) findViewById(R.id.know_moreTextView);
+        knowMore.setOnClickListener(this);
                
 		tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
 		pager = (ViewPager) findViewById(R.id.pager);
@@ -169,5 +172,14 @@ public class MainActivity extends FragmentActivity {
 				changeColor(color);
 			}
 		}
+	}
+
+	@Override
+	public void onClick(View v) {
+		Bundle extras = getIntent().getExtras();
+		int index = extras.getInt("index");
+		Intent intent=new Intent(this,WebActivity.class);
+		intent.putExtra("index", index);
+	    startActivity(intent);
 	}
 }

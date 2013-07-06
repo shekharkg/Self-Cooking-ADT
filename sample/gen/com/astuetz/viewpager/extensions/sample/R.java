@@ -137,55 +137,66 @@ containing a value of this type.
         public static final int egg=0x7f02000c;
         public static final int electrickettle=0x7f02000d;
         public static final int halwa=0x7f02000e;
-        public static final int ic_action_user=0x7f02000f;
-        public static final int ic_launcher=0x7f020010;
-        public static final int ic_launcher_actionbar=0x7f020011;
-        public static final int ic_launcher_chrome=0x7f020012;
-        public static final int ic_launcher_gmail=0x7f020013;
-        public static final int ic_launcher_gmaps=0x7f020014;
-        public static final int ic_launcher_gplus=0x7f020015;
-        public static final int induction=0x7f020016;
-        public static final int kheer=0x7f020017;
-        public static final int maggi=0x7f020018;
-        public static final int noodles=0x7f020019;
-        public static final int oats=0x7f02001a;
-        public static final int omelette=0x7f02001b;
-        public static final int pakora=0x7f02001c;
-        public static final int pasta=0x7f02001d;
-        public static final int popcorn=0x7f02001e;
-        public static final int rice=0x7f02001f;
-        public static final int sandwich=0x7f020020;
-        public static final int shekhar=0x7f020021;
-        public static final int soup=0x7f020022;
-        public static final int tabs_pattern=0x7f020023;
-        public static final int tabs_pattern_diagonal=0x7f020024;
-        public static final int tea=0x7f020025;
-        public static final int vishalika=0x7f020026;
+        public static final int ic_launcher_actionbar=0x7f02000f;
+        public static final int induction=0x7f020010;
+        public static final int kheer=0x7f020011;
+        public static final int loading=0x7f020012;
+        public static final int maggi=0x7f020013;
+        public static final int noodles=0x7f020014;
+        public static final int oats=0x7f020015;
+        public static final int omelette=0x7f020016;
+        public static final int pakora=0x7f020017;
+        public static final int pasta=0x7f020018;
+        public static final int popcorn=0x7f020019;
+        public static final int rice=0x7f02001a;
+        public static final int sandwich=0x7f02001b;
+        public static final int soup=0x7f02001c;
+        public static final int tabs_pattern=0x7f02001d;
+        public static final int tabs_pattern_diagonal=0x7f02001e;
+        public static final int tea=0x7f02001f;
     }
     public static final class id {
-        public static final int action_color=0x7f090009;
-        public static final int center=0x7f090006;
+        public static final int action_color=0x7f090015;
+        public static final int action_info=0x7f090016;
+        public static final int button1=0x7f090008;
+        public static final int buttonInduction=0x7f090010;
+        public static final int buttonKettle=0x7f09000e;
+        public static final int center=0x7f09000a;
         public static final int dishName=0x7f090002;
-        public static final int icon=0x7f090007;
-        public static final int image=0x7f090005;
+        public static final int editText1=0x7f090006;
+        public static final int editText2=0x7f090007;
+        public static final int icon=0x7f09000c;
+        public static final int image=0x7f090009;
+        public static final int imageView1=0x7f090012;
         public static final int img=0x7f090001;
-        public static final int pager=0x7f090004;
+        public static final int know_moreTextView=0x7f090003;
+        public static final int pager=0x7f090005;
         public static final int picNname=0x7f090000;
-        public static final int tabs=0x7f090003;
-        public static final int txtReceipeName=0x7f090008;
+        public static final int scrollView1=0x7f090013;
+        public static final int tabs=0x7f090004;
+        public static final int textViewDetails=0x7f090014;
+        public static final int textViewInduction=0x7f090011;
+        public static final int textViewKettle=0x7f09000f;
+        public static final int txtReceipeName=0x7f09000d;
+        public static final int webView1=0x7f09000b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int fragment_quick_contact=0x7f030001;
-        public static final int index=0x7f030002;
-        public static final int lv_row=0x7f030003;
-        public static final int quick_color=0x7f030004;
+        public static final int data_base=0x7f030001;
+        public static final int fragment_quick_contact=0x7f030002;
+        public static final int index=0x7f030003;
+        public static final int know_more=0x7f030004;
+        public static final int lv_row=0x7f030005;
+        public static final int quick_color=0x7f030006;
+        public static final int requiremnet_list=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_color=0x7f060001;
+        public static final int action_color=0x7f060002;
+        public static final int action_info=0x7f060003;
+        public static final int app_menu_name=0x7f060001;
         public static final int app_name=0x7f060000;
     }
     public static final class style {

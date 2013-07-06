@@ -9,7 +9,7 @@
 		android:layout_width="80dip"
 		android:layout_height="80dip"
 		android:layout_margin="5dp"
-		android:src="@drawable/ic_launcher" />
+		android:src="@drawable/ic_launcher_actionbar" />
 	<TextView
 		android:id="@+id/txtReceipeName"
 		android:layout_width="wrap_content"

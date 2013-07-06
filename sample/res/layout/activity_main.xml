@@ -12,24 +12,33 @@
 	    android:layout_marginLeft="4dip"
 	    android:layout_marginRight="4dip"
 	    android:layout_marginTop="8dip"
-	    android:orientation="horizontal"
-	    android:textAlignment="center" >
+        android:gravity="center_horizontal"
+	    android:orientation="horizontal">
 
 		<ImageView
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_margin="4dip"
-            android:layout_weight="1"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_marginLeft="4dip"
+            android:layout_marginTop="4dip"
             android:id="@+id/img"/>
 		<TextView
 		    android:id="@+id/dishName"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-            android:layout_marginTop="45dip"
-            android:layout_marginLeft="18dip"
-            android:layout_weight="1"
+            android:layout_marginTop="40dip"
+            android:layout_marginLeft="10dip"
             android:textStyle="bold"
-            android:textSize="25sp"/>
+            android:textSize="25sp"
+            android:textAlignment="center" />
+		<TextView
+		    android:id="@+id/know_moreTextView"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:layout_marginTop="43dip"
+            android:textSize="10sp"
+            android:textColor="#4682b4"
+            android:text="know more..."/>
 	</LinearLayout>
     <com.astuetz.viewpager.extensions.PagerSlidingTabStrip
         android:id="@+id/tabs"
