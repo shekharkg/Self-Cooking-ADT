@@ -21,7 +21,7 @@ import android.view.View;
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener  {
-
+	
 	private final Handler handler = new Handler();
 
 	private PagerSlidingTabStrip tabs;
@@ -38,7 +38,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
 		Bundle extras = getIntent().getExtras();
 		int index = extras.getInt("index");
 		String recipeName = RecipeList.getRecipeNameByIndex(index);
@@ -49,7 +48,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         textView.setText(recipeName);
         TextView knowMore = (TextView) findViewById(R.id.know_moreTextView);
         knowMore.setOnClickListener(this);
-               
 		tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
 		pager = (ViewPager) findViewById(R.id.pager);
 		adapter = new MyPagerAdapter(getSupportFragmentManager());
